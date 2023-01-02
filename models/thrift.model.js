@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const thriftSchema = new Schema(
   {
+    item_id: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -18,6 +22,16 @@ const thriftSchema = new Schema(
     size: {
       type: String,
       required: true,
+    },
+    available: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+      default: 0,
     },
   },
   { timestamps: true }
