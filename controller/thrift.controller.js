@@ -35,6 +35,25 @@ const ThriftController = {
       }
     });
   },
+  thriftTotal: async (req, res) => {
+    thriftModel.find().count((err, data) => {
+      if (err) {
+        res.status(400).json({ status: "error trying to fetch thrift record" });
+      } else {
+        res.status(200).json({ status: "thrift fetched successfully", data });
+      }
+    });
+  },
+  thriftWeekly: async (req, res) => {
+    thriftModel.find().count((err, data) => {
+      console.log(err, data);
+      if (err) {
+        res.status(400).json({ status: "error trying to fetch thrift record" });
+      } else {
+        res.status(200).json({ status: "thrift fetched successfully", data });
+      }
+    });
+  },
 
   deleteThrift: async (req, res) => {
     res.status(200).json({ status: "merch deleted" });

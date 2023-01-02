@@ -3,21 +3,21 @@ const Schema = mongoose.Schema;
 
 const thriftSchema = new Schema(
   {
-    name_of_thrift: {
+    name: {
       type: String,
-      required: false,
+      required: true,
     },
     color: {
       type: String,
-      required: false,
+      required: true,
     },
     price: {
       type: Number,
-      required: false,
+      required: true,
     },
     size: {
       type: String,
-      required: false,
+      required: true,
     },
   },
   { timestamps: true }
