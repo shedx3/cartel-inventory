@@ -9,4 +9,5 @@ const idGenerator = (length = 6) => {
   return result;
 };
 
-module.exports = { idGenerator};
+module.exports = { idGenerator };
+
