@@ -11,3 +11,25 @@ const idGenerator = (length = 6) => {
 
 module.exports = { idGenerator };
 
+// let checkEmail = req.body.email;
+// console.log(checkEmail);
+// await userModel.findOne({ checkEmail }, (doc) => {
+//   console.log(checkEmail);
+
+//   if (doc.email === checkEmail) {
+//     res.status(400).json({ status: "email already exists" });
+//   } else {
+//     let userData = {
+//       email,
+//       password,
+//       role,
+//     };
+//     userModel.create(userData, (err, data) => {
+//       if (err) {
+//         res.status(400).json({ status: "error trying to create usergroup" });
+//       } else {
+//         res.status(200).json({ status: "user added successfully", data });
+//       }
+//     });
+//   }
+// });
