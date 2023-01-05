@@ -60,6 +60,30 @@ const userController = {
       }
     });
   },
+  deleteUser: async (req, res) => {
+    let delEmail = req.body.email;
+    userModel.findOneAndDelete({ email: delEmail }, (err) => {
+      if (err) {
+        res.status(400).json({ status: "could not find email" });
+      } else {
+        res.status(200).json({ status: "account has been removed" });
+      }
+    });
+  },
+  // updateUser: async (req, res) => {
+  //   let { upEmail, upPassword, upRole } = req.body;
+  //   userModel.findOneAndUpdate(
+  //     { email: upEmail, password: upPassword, role: upRole },
+  //     { new: true },
+  //     (err) => {
+  //       if (err) {
+  //         res.status(400).json({ status: "could not find email" });
+  //       } else {
+  //         res.status(200).json({ status: "account has been updated" });
+  //       }
+  //     }
+  //   );
+  // },
 };
 
 module.exports = userController;
