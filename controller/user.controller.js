@@ -5,9 +5,9 @@ const userController = {
     const doc = new userModel(req.body);
 
     let checkEmail = req.body.email;
-    console.log(checkEmail);
-    const found = await userModel.findOne({
-      email,
+
+    const found = await userModel.find({
+      email: checkEmail,
     });
 
     console.log(found);
@@ -49,16 +49,16 @@ const userController = {
     // });
   },
   login: async (req, res) => {
-    // const { email, password } = req.body;
-    // await userModel.findOne({ email }, (err, data) => {
-    //   if (err) {
-    //     res.status(400).json({ status: "connection not successful" });
-    //   } else if (email !== data.email && password !== data.password) {
-    //     res.status(400).json({ status: "invalid email or password" });
-    //   } else {
-    //     res.status(400).json({ status: `welcome ${data.role}` });
-    //   }
-    // });
+    const { email, password } = req.body;
+    userModel.findOne({ email }, (err, data) => {
+      if (err) {
+        res.status(400).json({ status: "connection not successful" });
+      } else if (email !== data.email && password !== data.password) {
+        res.status(400).json({ status: "invalid email or password" });
+      } else {
+        res.status(400).json({ status: `welcome ${data.role}` });
+      }
+    });
   },
 };
 

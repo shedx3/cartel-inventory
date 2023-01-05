@@ -7,11 +7,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      // uniqueCaseInsensitive: true,
-      // lowercase: true,
-      // dropDups: true,
-      // trim: true,
-      // match: /^\w ([.-]?\w )*@\w ([.-]?\w )*(\.\w{2,3}) $/,
+      uniqueCaseInsensitive: true,
+      lowercase: true,
+      dropDups: true,
+      trim: true,
+      match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
     },
 
     password: {
